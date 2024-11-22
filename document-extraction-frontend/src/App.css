@@ -1,0 +1,148 @@
+.app-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.upload-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.file-input {
+  flex-grow: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.upload-button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.upload-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.document-select {
+  flex-grow: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tab-navigation {
+  position: relative;
+  display: flex;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  padding: 5px;
+  margin-bottom: 20px;
+  overflow-x: auto;
+}
+
+.tab-button {
+  position: relative;
+  padding: 10px 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1;
+  transition: color 0.3s;
+  white-space: nowrap;
+}
+
+.tab-button.active {
+  color: black;
+}
+
+.tab-button:not(.active) {
+  color: #718096;
+}
+
+.slide-box {
+  position: absolute;
+  bottom: 0;
+  height: 3px;
+  background-color: #007bff;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 600px) {
+  .upload-section {
+    flex-direction: column;
+  }
+
+  .tab-navigation {
+    flex-wrap: wrap;
+  }
+
+  .tab-button {
+    flex-grow: 1;
+  }
+}
+.document-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.document-select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.document-list {
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.document-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.document-item:last-child {
+  border-bottom: none;
+}
+
+.document-item span {
+  flex-grow: 1;
+  margin-right: 10px;
+  font-size: 14px;
+  color: #333;
+}
+
+.delete-button {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: background-color 0.3s ease;
+}
+
+.delete-button:hover {
+  background-color: #ff3333;
+}
