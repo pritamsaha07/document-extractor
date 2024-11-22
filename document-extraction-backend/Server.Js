@@ -48,7 +48,6 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage });
 
-// Function to extract text from PDF
 function extractPDFText(filePath) {
   return new Promise((resolve, reject) => {
     pdfExtract.extract(filePath, {}, (err, data) => {
@@ -63,7 +62,6 @@ function extractPDFText(filePath) {
   });
 }
 
-// Function to extract text from Excel
 function extractExcelText(filePath) {
   const workbook = xlsx.readFile(filePath);
   let excelContent = "";
