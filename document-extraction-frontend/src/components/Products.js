@@ -79,9 +79,7 @@ const ProductsTable = () => {
     if (editingProduct && currentDocument) {
       const updatedData = { ...currentDocument.data };
 
-      // Update all instances of this product across customers
       Object.keys(updatedData).forEach((customerName) => {
-        // Add defensive checks
         if (!updatedData[customerName]["Product Name"]) return;
 
         const productIndices = updatedData[customerName]["Product Name"].reduce(
@@ -93,22 +91,18 @@ const ProductsTable = () => {
         );
 
         productIndices.forEach((index) => {
-          // Recalculate total amount based on new unit price and quantity
           const newTotalAmount =
             editedValues.totalQuantity * editedValues.unitPrice;
 
-          // Update Quantity
           if (Array.isArray(updatedData[customerName]["Quantity"])) {
             updatedData[customerName]["Quantity"][index] =
               editedValues.totalQuantity;
           }
 
-          // Update Total Amount
           if (Array.isArray(updatedData[customerName]["Total Amount"])) {
             updatedData[customerName]["Total Amount"][index] = newTotalAmount;
           }
 
-          // Update Tax
           if (Array.isArray(updatedData[customerName]["Tax"])) {
             updatedData[customerName]["Tax"][index] = editedValues.totalTax;
           }
@@ -129,8 +123,6 @@ const ProductsTable = () => {
     "Customers",
     "Actions",
   ];
-
-  // ... [rest of the existing styles remain the same]
 
   return (
     <div style={containerStyle}>
