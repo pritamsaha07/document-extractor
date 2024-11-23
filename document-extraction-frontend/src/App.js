@@ -57,7 +57,7 @@ const App = () => {
 
     try {
       const { data } = await axios.post(
-        "https://document-extraction-backend.onrender.com",
+        "http://localhost:3000/process-document",
         formData
       );
 
